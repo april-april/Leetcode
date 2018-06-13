@@ -22,4 +22,5 @@ def binarySearch(nums, target):
     return -1
 
 testArray = [1, 5, 6, 10, 25, 35, 100, 200, 800]
-print(binarySearch(testArray, 200))
+print(binarySearch(testArray, 200)) #prints 7
+print(binarySearch(testArray, 5)) #print 1

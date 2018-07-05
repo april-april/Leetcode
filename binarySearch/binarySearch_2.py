@@ -3,6 +3,7 @@
 Template #2 is an advanced form of Binary Search. 
 It is used to search for an element or condition which requires 
 accessing the current index and its immediate right neighbor's index in the array.
+
  '''
 
 def binarySearch(nums, target):
@@ -16,13 +17,14 @@ def binarySearch(nums, target):
 
     left, right = 0, len(nums)
     while left < right:
-        mid = (left + right) // 2
+        mid = (left + right) // 2 #this works because python doesnt overflow
+        # left + (right - left) // 2 also works 
         if nums[mid] == target:
             return mid
         elif nums[mid] < target:
             left = mid + 1
         else:
-            right = mid
+            right = mid #this is the main difference
 
     # Post-processing:
     # End Condition: left == right

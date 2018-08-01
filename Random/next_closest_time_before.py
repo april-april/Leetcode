@@ -3,7 +3,7 @@
 # using the same subset of digits
 
 
-class Solution:
+class Solution(object):
     def nextClosestTime(self, time):        
         s = set(time)
         hour = int(time[0:2])

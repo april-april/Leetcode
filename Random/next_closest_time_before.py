@@ -1,6 +1,7 @@
 # Given a time represented in the format "HH:MM", 
-# form the next closest time by reusing the current digits. 
-# There is no limit on how many times a digit can be reused.
+# what was the last time that could be displayed 
+# using the same subset of digits
+
 
 class Solution:
     def nextClosestTime(self, time):        
@@ -18,7 +19,6 @@ class Solution:
             # equivalent to set(time).issubset(s)
             if set(time) <= s:
                 return time
-        return time
         
         
 def main():        

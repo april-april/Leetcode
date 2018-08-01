@@ -8,7 +8,7 @@ class Solution:
         hour = int(time[0:2])
         minute = int(time[3:5])
         while True:
-            minute += 1
+            minute -= 1
             if minute == 60:
                 minute = 0
                 hour = 0 if hour == 23 else hour + 1

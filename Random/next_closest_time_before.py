@@ -14,6 +14,8 @@ class Solution:
                 hour = 0 if hour == 23 else hour + 1
             
             time = "%02d:%02d" % (hour, minute)
+            # checks whether every element in set(time) is in s
+            # equivalent to set(time).issubset(s)
             if set(time) <= s:
                 return time
         return time

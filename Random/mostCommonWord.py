@@ -16,3 +16,11 @@ def mostCommonWord(self, paragraph, banned):
         for w in p:
             word_count[w] += 1
         return max(word_count, key=lambda k: word_count[k])
+
+def main():
+    sentence = "Bob hit a ball, the hit BALL flew far after it was hit."
+    nope = ["hit"]
+    answer = mostCommonWord(sentence, nope)
+    print(answer)
+
+main()

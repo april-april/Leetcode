@@ -14,14 +14,8 @@ def singleNumber(nums):
 
         return bit
 
-def main():
-    test = [4,1,2,1,2]
-    print(singleNumber(test))
 
-main()
-
-# second way
-
+# second way with hashmap
 class Solution(object):
     def singleNumber(self, nums):
         """
@@ -35,3 +29,11 @@ class Solution(object):
             except:
                 hash_table[i] = 1
         return hash_table.popitem()[0]
+
+def main():
+    test = [4,1,2,1,2]
+    print(singleNumber(test))
+    version2 = Solution()
+    print(version2.singleNumber(test))
+
+main()

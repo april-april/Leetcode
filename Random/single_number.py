@@ -37,3 +37,25 @@ def main():
     print(version2.singleNumber(test))
 
 main()
+
+# simpler solution
+def find_single_number(list):
+    hash = {}
+    
+    for number in list:
+        if number in hash:
+            hash[number] += 1
+        else:
+            hash[number] = 1
+
+    for key, value in hash.items():
+        if value == 1:
+            print(key)
+            return key
+
+def main2():
+    test = [1, 1, 2, 2, 4, 11, 4, 5, 10, 5, 10]
+    answer = find_single_number(test)
+    print(answer)
+
+main2()

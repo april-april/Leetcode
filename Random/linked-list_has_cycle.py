@@ -8,3 +8,23 @@ def hasCycle(head):
         return True
     except:
         return False
+
+
+# more intuitive solution
+
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        setNodes = set()
+
+        while head is not None:
+            if id(head) in setNodes:
+                return True
+
+            setNodes.add(id(head))
+            head = head.next
+
+        return False 

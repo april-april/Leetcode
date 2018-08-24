@@ -13,7 +13,7 @@ def hasCycle(head):
 # more intuitive solution
 
 class Solution(object):
-    def hasCycle(self, head):
+    def hasCycle2(self, head):
         """
         :type head: ListNode
         :rtype: bool

@@ -17,13 +17,12 @@ class Solution(object):
             time = "%02d:%02d" % (hour, minute)
             # checks whether every element in set(time) is in s
             # equivalent to set(time).issubset(s)
-            if set(time) <= s:
+            if set(time).issubset(s):
                 return time
         
         
-def main():        
+if __name__ == '__main__':        
     solution = Solution()
     time = solution.nextClosestTime('11:36')
     print(time) # prints 11:33
     
-main()

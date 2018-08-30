@@ -9,3 +9,10 @@ class Solution(object):
             
             if i + 1 < n and a[i] < a[i+1]:
                 a[i], a[i+1] = a[i+1], a[i]
+        
+        return a
+
+if __name__== '__main__':
+    solution = Solution()
+    testArray = [3,5,2,1,6,4]
+    print(solution.wiggleSort(testArray))

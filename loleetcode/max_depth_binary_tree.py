@@ -6,7 +6,8 @@
 #         self.right = None
 
 class Solution(object):
-    def maxDepth(self, root):
+
+    def maxDepth1(self, root):
         """
         :type root: TreeNode
         :rtype: int
@@ -24,3 +25,9 @@ class Solution(object):
             level = queue
             
         return depth
+
+    def maxDepth2(self, root):
+        if not root:
+            return 0
+
+        return 1 + max(self.maxDepth2(root.left), self.maxDepth2(root.right))

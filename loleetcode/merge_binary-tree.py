@@ -28,3 +28,23 @@ class Solution(object):
             return root
         else:
             return t1 or t2
+
+    def mergeTrees3(self, t1, t2):
+        """
+        :type t1: TreeNode
+        :type t2: TreeNode
+        :rtype: TreeNode
+        """
+        if not t1 and not t2:
+            return
+        
+        if not t1:
+            res = t2
+        elif not t2:
+            res = t1
+        else:          
+            res = TreeNode(t1.val+t2.val)
+            res.left = self.mergeTrees3(t1.left,t2.left)
+            res.right = self.mergeTrees3(t1.right,t2.right)
+        
+        return res

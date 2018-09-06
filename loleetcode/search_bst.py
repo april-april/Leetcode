@@ -40,3 +40,15 @@ class Solution(object):
             return self.searchBST2(root.right, val)
 
         return None
+
+    def searchBST3(self, root, val):
+        current = root
+        
+        while current:
+            if current.val == val:
+                return current
+            elif current.val > val:
+                current = current.left
+            else:
+                current = current.right
+        return None

@@ -23,3 +23,20 @@ class Solution(object):
                 root = root.right
 
         return None
+
+    def searchBST2(self, root, val):
+        """
+        :type root: TreeNode
+        :type val: int
+        :rtype: TreeNode
+        """
+        if root.val == val:
+            return root
+
+        elif root.val > val and root.left:
+            return self.searchBST2(root.left, val)
+
+        elif root.val < val and root.right:
+            return self.searchBST2(root.right, val)
+
+        return None

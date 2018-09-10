@@ -21,3 +21,21 @@ class Solution(object):
         
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
+    def isSameTree2(self, p, q):
+        if p and q:
+            return p.val == q.val and self.isSameTree2(p.left, q.left) and self.isSameTree2(p.right, q.right)
+        return p is q
+
+def main():
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.left = Node(4)
+    root.left.right = Node(5)
+
+    root2 = Node(1)
+    root2.left = Node(2)
+    root2.right = Node(3)
+    root2.left.left = Node(5)
+    solution = Solution()
+    print(solution.isSameTree2(root, root2))

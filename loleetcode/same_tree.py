@@ -25,6 +25,19 @@ class Solution(object):
         if p and q:
             return p.val == q.val and self.isSameTree2(p.left, q.left) and self.isSameTree2(p.right, q.right)
         return p is q
+        
+    def isSameTree3(self, p, q):
+        stack = [(p, q)]
+        while stack:
+            n1, n2 = stack.pop()
+            if n1 and n2 and n1.val == n2.val:
+                stack.append((n1.right, n2.right))
+                stack.append((n1.left, n2.left))
+            elif not n1 and not n2:
+                continue
+            else:
+                return False
+        return True
 
 def main():
     root = Node(1)
@@ -39,3 +52,6 @@ def main():
     root2.left.left = Node(5)
     solution = Solution()
     print(solution.isSameTree2(root, root2))
+
+if __name__ == "__main__":
+    main()

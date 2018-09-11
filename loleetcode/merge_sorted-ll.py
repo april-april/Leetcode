@@ -1,5 +1,10 @@
 def merge_sorted(head1, head2):
-
+  # if both lists are empty then merged list is also empty
+  # if one of the lists is empty then other is the merged list
+    if head1 == None:
+        return head2
+    elif head2 == None:
+        return head1
 
     mergedHead = None
     if head1.data <= head2.data:
